@@ -4,6 +4,7 @@ const friend = require("../controller/friends.controller");
 
 //api declaration
 friendsRouter.get("/", friend.getAllFriends);
+friendsRouter.get("/image", friend.getFriendImage);
 friendsRouter.get("/:friendId", friend.getFriendsById);
 friendsRouter.post("/", friend.addNewFriend);
 

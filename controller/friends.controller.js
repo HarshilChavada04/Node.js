@@ -1,9 +1,12 @@
 const data = require("../model/data.model");
+const path = require("path");
 
 function getAllFriends(req, res) {
   res.status(200).json(data.friends);
 }
-
+function getFriendImage(req, res) {
+  res.sendFile(path.join(__dirname, "..", "public", "skimountain.jpg"));
+}
 function getFriendsById(req, res) {
   let friendId = Number(req.params.friendId);
   let friend = data.friends[friendId];
@@ -30,4 +33,5 @@ module.exports = {
   getAllFriends,
   getFriendsById,
   addNewFriend,
+  getFriendImage,
 };
